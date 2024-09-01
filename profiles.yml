@@ -1,0 +1,16 @@
+# this profiles.yml file is normally saved at ~/.dbt/profiles.yml
+# (I've just kept it here for this example project)
+dbt_snapshot_example:
+  outputs:
+    dev:
+      type: bigquery
+      method: oauth
+      project: your-gcp-project-id
+      dataset: dbt_snapshot_example
+      threads: 4
+      maximum_bytes_billed: 1000000000000 # 1 terabyte
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      location: europe-west2
+      priority: interactive
+  target: dev

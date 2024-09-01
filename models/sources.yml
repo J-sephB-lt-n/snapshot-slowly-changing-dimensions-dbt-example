@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: dbt_snapshot_example
+    database: your-gcp-project-id
+    schema: dbt_snapshot_example
+    tables:
+      - name: users
